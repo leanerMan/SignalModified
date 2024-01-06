@@ -1,0 +1,92 @@
+ #  twilio: # Twilio gateway configuration
+  #  accountId: 
+ #   accountToken: 
+ #   numbers: # Numbers allocated in Twilio
+ #     - # First number
+ #     - # Second number
+ #     - # Third number
+ #     - # ...
+ #     - # Nth number
+ #   messagingServicesId: 
+ #   localDomain: # Domain Twilio can connect back to for calls. Should be domain of your service.
+  
+
+
+push:
+  queueSize: 100 # Size of push pending queue
+
+ # redphone:
+ #   authKey: # Deprecated
+
+turn:
+  # TURN server configuration
+  secret: myTurnServerSecret
+
+  # List of URIs specifying the TURN server addresses
+  uris:
+    - stun:stun.example.com:80
+    - stun:stun.example.net:443
+    - turn:turn.example.com:3478?transport=udp
+    - turn:turn.example.net:5349?transport=tcp
+
+cache:
+  # Redis server configuration for cache cluster
+  url: 'redis://localhost:6379'
+  # No need for replicas in a local setup
+  replicaUrls:
+    - redis://localhost:6380
+    - redis://localhost:6381
+
+directory:
+  # Redis server configuration for directory cluster
+  url: 'redis://localhost:6379'
+  # No need for replicas in a local setup
+  replicaUrls:
+    - redis://localhost:6380
+    - redis://localhost:6381
+
+messageCache:
+  redis:
+    url: redis://localhost:6379
+    replicaUrls:
+      - redis://localhost:6380
+      - redis://localhost:6381
+  cacheRate: 1
+  persistDelayMinutes: 10
+
+
+
+messageStore:
+  # Postgresql database configuration for message store
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: 'postgres'
+  url: jdbc:postgresql://localhost:5432/messagedb
+
+attachments: # AWS S3 configuration
+  accessKey: AKIA3JPFPBDSXP3OT6YQ
+  accessSecret: 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
+  bucket: manbhul
+
+profiles: # AWS S3 configuration
+  accessKey: AKIA3JPFPBDSXP3OT6YQ
+  accessSecret: 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
+  bucket: manbhul
+  region: ap-south-1
+
+database:
+  # Postgresql database configuration
+  driverClass: org.postgresql.Driver
+  user: postgres
+  password: postgres
+  url: jdbc:postgresql://localhost:5432/accountdb
+
+
+#apn: # Apple Push Notifications configuration
+#  bundleId:
+#  pushCertificate:
+#  pushKey:
+
+fcm: # FCM Configuration
+  senderId: 791484457457
+  apiKey: AIzaSyDGyW3PgqBLkIiaRaFJV5OyZWf2esirXOk
