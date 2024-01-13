@@ -63,17 +63,6 @@ messageStore:
   password: 'postgres'
   url: jdbc:postgresql://localhost:5432/messagedb
 
-attachments: # AWS S3 configuration
-  accessKey: AKIA3JPFPBDSXP3OT6YQ
-  accessSecret: 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
-  bucket: manbhul
-
-profiles: # AWS S3 configuration
-  accessKey: AKIA3JPFPBDSXP3OT6YQ
-  accessSecret: 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
-  bucket: manbhul
-  region: ap-south-1
-
 database:
   # Postgresql database configuration
   driverClass: org.postgresql.Driver
