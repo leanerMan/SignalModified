@@ -76,6 +76,4 @@ database:
 #  pushCertificate:
 #  pushKey:
 
-fcm: # FCM Configuration
-  senderId: 791484457457
-  apiKey: AIzaSyDGyW3PgqBLkIiaRaFJV5OyZWf2esirXOk
+
